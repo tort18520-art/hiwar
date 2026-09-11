@@ -1,0 +1,7 @@
+# هذه الملفات سيتجاهلها Glitch/Render عند النشر
+node_modules/
+.env
+logs/
+*.log
+data/
+.env

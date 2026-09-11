@@ -1,0 +1,16 @@
+# Blueprint للنشر بضغطة واحدة على Render (مجاني)
+# بعد رفع المشروع إلى GitHub:
+#   Render.com → New → Blueprint → الصق رابط المستودع → Apply
+services:
+  - type: web
+    name: hiwar
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: PORT
+        value: "3000"
