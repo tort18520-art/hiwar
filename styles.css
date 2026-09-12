@@ -153,6 +153,15 @@ body {
   margin-top: 21vh;
   animation: riseIn 1s 0.18s ease both;
 }
+.welcome-credit {
+  margin: 14px 0 0;
+  font-family: var(--font-arabic);
+  font-size: clamp(1rem, 2.6vh, 1.3rem);
+  letter-spacing: 0.02em;
+  color: #e9d9a6;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.5);
+  animation: riseIn 1s 0.26s ease both;
+}
 .hero-cta {
   margin-top: 10vh;
   display: flex; align-items: center; justify-content: center;

@@ -2,7 +2,7 @@
    يخزّن هيكل التطبيق كي يعمل حتى عند انقطاع الخادم مؤقتاً (network-first مع مخبأ احتياطي) */
 'use strict';
 
-const CACHE = 'hiwar-shell-v20';
+const CACHE = 'hiwar-shell-v21';
 const SHELL = ['./', './index.html', './styles.css', './app.js', './bg_alpine.jpg'];
 
 self.addEventListener('install', (e) => {
