@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حوار — رفيقتك الذكية</title>
+  <meta name="description" content="حوار — رفيقتك الذكية لتنظيم الدراسة والمواعيد والعادات لطالبات المرحلة الثانوية." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%230a1a05'/%3E%3Ctext x='50' y='70' font-size='60' text-anchor='middle' fill='%23ebf0c0' font-family='serif'%3E%D8%AD%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600&family=Tajawal:wght@300;400;500;700;800&family=Amiri:ital,wght@0,400;0,700&family=Cairo:wght@300;400;600;700&family=Noto+Naskh+Arabic:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=19" />
+</head>
+<body>
+
+  <!-- ================= شاشة الترحيب (محفوظة كما هي) ================= -->
+  <section class="screen screen--welcome" id="landing">
+    <div class="scene scene--olive">
+      <div class="bokeh" aria-hidden="true">
+        <span class="bk" style="--x:8%;--y:14%;--s:110px;--o:.5"></span>
+        <span class="bk" style="--x:88%;--y:10%;--s:180px;--o:.55"></span>
+        <span class="bk" style="--x:74%;--y:26%;--s:60px;--o:.4"></span>
+        <span class="bk" style="--x:16%;--y:70%;--s:220px;--o:.42"></span>
+        <span class="bk" style="--x:84%;--y:78%;--s:90px;--o:.5"></span>
+        <span class="bk" style="--x:40%;--y:44%;--s:46px;--o:.55"></span>
+        <span class="bk" style="--x:60%;--y:62%;--s:70px;--o:.35"></span>
+        <span class="bk" style="--x:28%;--y:28%;--s:36px;--o:.6"></span>
+        <span class="bk" style="--x:93%;--y:48%;--s:120px;--o:.38"></span>
+        <span class="bk" style="--x:6%;--y:46%;--s:64px;--o:.45"></span>
+      </div>
+      <div class="olive-bloom" aria-hidden="true"></div>
+    </div>
+
+    <button class="corner-btn" id="settingsBtn" title="الإعدادات">
+      <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 0112 8.4a3.6 3.6 0 010 7.2z"/></svg>
+    </button>
+    <button class="corner-btn corner-btn--lang" id="langBtn" title="Language"><span id="langBtnLabel">EN</span></button>
+
+    <div class="welcome-content">
+      <h1 class="welcome-title">welcome to hiwar</h1>
+      <p class="welcome-tagline">رفيقتك الذكية لتنظيم يومك الدراسي</p>
+      <div class="hero-cta">
+        <button class="try-now" id="tryNowBtn">ابدئي الآن</button>
+      </div>
+      <button class="voice-link" id="voiceTryBtn">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M12 14a3 3 0 003-3V5a3 3 0 00-6 0v6a3 3 0 003 3z"/><path fill="currentColor" d="M17 11a5 5 0 01-10 0H5a7 7 0 006 6.92V21h2v-3.08A7 7 0 0019 11h-2z"/></svg>
+        <span>تحدثي معي صوتياً</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ================= شاشة الحساب ================= -->
+  <section class="screen screen--auth" id="authScreen" hidden>
+    <div class="auth-bg" aria-hidden="true"></div>
+    <div class="auth-card">
+      <div class="auth-brand">حوار <em>HIWAR</em></div>
+      <div class="auth-tabs">
+        <button class="auth-tab active" id="tabLogin">تسجيل الدخول</button>
+        <button class="auth-tab" id="tabRegister">حساب جديد</button>
+      </div>
+
+      <form id="loginForm" class="auth-form">
+        <div class="field-group"><label>البريد الإلكتروني</label><input type="email" id="loginEmail" dir="ltr" placeholder="you@example.com" autocomplete="email" /></div>
+        <div class="field-group"><label>كلمة المرور</label><input type="password" id="loginPassword" dir="ltr" autocomplete="current-password" /></div>
+        <button type="submit" class="auth-submit">دخول</button>
+      </form>
+
+      <form id="registerForm" class="auth-form" hidden>
+        <div class="field-group"><label>الاسم</label><input type="text" id="regName" placeholder="اسمك" autocomplete="name" /></div>
+        <div class="field-group"><label>البريد الإلكتروني</label><input type="email" id="regEmail" dir="ltr" placeholder="you@example.com" autocomplete="email" /></div>
+        <div class="field-group"><label>رقم الجوال (اختياري)</label><input type="tel" id="regPhone" dir="ltr" placeholder="05xxxxxxxx" autocomplete="tel" /></div>
+        <div class="field-group"><label>كلمة المرور (6 أحرف فأكثر)</label><input type="password" id="regPassword" dir="ltr" autocomplete="new-password" /></div>
+        <button type="submit" class="auth-submit">إنشاء الحساب</button>
+      </form>
+
+      <div class="auth-error" id="authError" hidden></div>
+      <p class="auth-note">بياناتك تُحفظ بأمان وتتزامن عبر أجهزتك 🔒</p>
+      <button class="auth-back" id="authBackBtn">→ العودة للرئيسية</button>
+    </div>
+  </section>
+
+  <!-- ================= شاشة المحادثة (ALPINE) ================= -->
+  <section class="screen screen--chat" id="chat" hidden>
+    <div class="alpine-bg" aria-hidden="true"></div>
+    <div class="alpine-veil" aria-hidden="true"></div>
+
+    <header class="alpine-top">
+      <button class="glass-btn" id="menuBtn" title="لوحة التحكم">
+        <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M3 6h18v2H3V6zm0 5h18v2H3v-2zm0 5h18v2H3v-2z"/></svg>
+      </button>
+      <div class="alpine-brand" id="brandBtn" title="الصفحة الرئيسية">
+        <span class="ab-name">HIWAR <em>AI</em></span>
+        <span class="ab-sub" id="chatTitle">رفيقتك الذكية</span>
+      </div>
+      <div class="alpine-status"><span class="g" id="statusDot"></span><span id="statusText">متصل</span></div>
+      <button class="glass-btn" id="scheduleBtn" title="جدول اليوم">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+      </button>
+      <button class="glass-btn" id="voiceToggleBtn" title="الرد الصوتي">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0014 7.97v8.05A4.5 4.5 0 0016.5 12zM14 3.23v2.06a7 7 0 010 13.42v2.06a9 9 0 000-17.54z"/></svg>
+      </button>
+      <button class="glass-btn" id="settingsBtn2" title="الإعدادات">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 00.12-.61l-1.92-3.32a.49.49 0 00-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.484.484 0 00-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 00-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 0112 8.4a3.6 3.6 0 010 7.2z"/></svg>
+      </button>
+      <button class="glass-btn" id="logoutBtn" title="تسجيل الخروج">
+        <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/></svg>
+      </button>
+    </header>
+
+    <div class="voice-mode-banner" id="voiceModeBanner" hidden>
+      <span class="vm-icon">🎙️</span>
+      <span id="voiceModeBannerText">وضع المحادثة الصوتية مفعّل — تحدثي بحرية وسأرد عليك صوتياً</span>
+      <button class="glass-btn" id="exitVoiceModeBtn" title="إيقاف">✕</button>
+    </div>
+
+    <div class="sidebar-scrim" id="sidebarScrim"></div>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <span class="side-title">لوحة التحكم</span>
+        <button class="glass-btn" id="sidebarCloseBtn" title="إغلاق">✕</button>
+      </div>
+      <div class="sidebar-list" id="panel"></div>
+    </aside>
+
+    <div class="messages" id="messages">
+      <div class="empty-state" id="emptyState">
+        <div class="chips" id="chips"></div>
+      </div>
+    </div>
+
+    <!-- شريط الاختيارات السريعة -->
+    <div class="quick-bar" id="quickBar" hidden>
+      <div class="quick-chips" id="quickChips"></div>
+    </div>
+
+    <div class="voice-status" id="voiceStatus" hidden>
+      <div class="voice-wave" id="voiceWave"><span></span><span></span><span></span><span></span><span></span></div>
+      <span id="voiceStatusText">أستمع إليك…</span>
+      <button class="glass-btn" id="stopVoiceBtn" title="إيقاف">
+        <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M6 6h12v12H6z"/></svg>
+      </button>
+    </div>
+
+    <div class="composer-wrap">
+      <div class="composer" id="composer">
+        <button class="composer-mic" id="micBtn" title="تحدّثي">
+          <svg viewBox="0 0 24 24" width="21" height="21"><path fill="currentColor" d="M12 14a3 3 0 003-3V5a3 3 0 00-6 0v6a3 3 0 003 3z"/><path fill="currentColor" d="M17 11a5 5 0 01-10 0H5a7 7 0 006 6.92V21h2v-3.08A7 7 0 0019 11h-2z"/></svg>
+        </button>
+        <div class="in-wave" id="inWave"><span></span><span></span><span></span><span></span><span></span></div>
+        <textarea id="input" rows="1" placeholder="ماذا تريدين أن تفعلي؟" dir="auto"></textarea>
+        <button class="composer-send" id="sendBtn" title="إرسال">
+          <svg viewBox="0 0 24 24" width="19" height="19"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+      <div class="composer-foot" id="composerFoot">HIWAR AI — رفيقتك الذكية 🌸</div>
+    </div>
+  </section>
+
+  <!-- ================= الإعدادات ================= -->
+  <div class="modal-backdrop" id="settingsModal" hidden>
+    <div class="modal">
+      <div class="modal-head">
+        <h3>الإعدادات</h3>
+        <button class="modal-close" id="closeSettingsBtn">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h4 class="modal-sep">📚 المذاكرة</h4>
+        <div class="field-group">
+          <label>أفضّل المذاكرة</label>
+          <select id="studyWindowSelect">
+            <option value="any">أي وقت مناسب</option>
+            <option value="morning">في الصباح</option>
+            <option value="afterAsr">بعد العصر</option>
+            <option value="afterMaghrib">بعد المغرب</option>
+          </select>
+        </div>
+
+        <h4 class="modal-sep">🔔 التذكيرات</h4>
+        <div class="field-group row"><label class="switch"><input type="checkbox" id="remindSoundInput" /><span class="slider"></span></label><span>تشغيل صوت التنبيه</span></div>
+        <div class="field-group">
+          <label>نغمة التنبيه</label>
+          <select id="remindSoundSelect">
+            <option value="chime">🔔 رنين ناعم</option>
+            <option value="bell">🛎️ جرس لطيف</option>
+            <option value="soft">🎵 نغمة هادئة</option>
+          </select>
+        </div>
+        <div class="field-group row"><label class="switch"><input type="checkbox" id="remindTaskInput" /><span class="slider"></span></label><span>تذكير قبل المهام (15 دقيقة)</span></div>
+        <div class="field-group row"><label class="switch"><input type="checkbox" id="remindSleepInput" /><span class="slider"></span></label><span>تذكير وقت النوم</span></div>
+        <div class="field-group row"><label class="switch"><input type="checkbox" id="remindHabitInput" /><span class="slider"></span></label><span>تذكير العادات اليومية</span></div>
+        <div class="field-group row"><label class="switch"><input type="checkbox" id="remindPrayerInput" /><span class="slider"></span></label><span>تذكير مواقيت الصلاة</span></div>
+
+        <h4 class="modal-sep">🎙️ الصوت</h4>
+        <div class="field-group row"><label class="switch"><input type="checkbox" id="autoSpeakInput" /><span class="slider"></span></label><span>قراءة ردود المساعدة صوتياً</span></div>
+        <div class="field-group">
+          <label>محرك الصوت</label>
+          <select id="voiceEngineSelect">
+            <option value="google">Google بشري — الأفضل (يحتاج إنترنت)</option>
+            <option value="system">جهازي — يعمل بدون إنترنت</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>لغة الصوت</label>
+          <select id="voiceLangSelect">
+            <option value="ar-SA">العربية</option>
+            <option value="en-US">English</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>السرعة</label>
+          <input type="range" id="rateInput" min="0.6" max="1.4" step="0.1" value="1" />
+        </div>
+        <div class="field-group">
+          <button class="modal-btn ghost btn-block" id="testVoiceBtn" type="button">🔊 تجربة الصوت</button>
+        </div>
+
+        <h4 class="modal-sep">🤖 الذكاء الاصطناعي (متقدم)</h4>
+        <div class="field-group">
+          <label>النموذج</label>
+          <input type="text" id="modelInput" placeholder="gemini-flash-lite-latest" dir="ltr" />
+        </div>
+      </div>
+      <div class="modal-foot">
+        <button class="modal-btn ghost" id="resetSettingsBtn">إعادة الضبط</button>
+        <button class="modal-btn gold" id="saveSettingsBtn">حفظ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= جدول اليوم ================= -->
+  <div class="modal-backdrop" id="scheduleModal" hidden>
+    <div class="modal modal--wide">
+      <div class="modal-head">
+        <h3 id="scheduleTitle">جدول اليوم الذكي ✨</h3>
+        <button class="modal-close" id="closeScheduleBtn">
+          <svg viewBox="0 0 24 24" width="20" height="20"><path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="schedulePrayers" class="prayer-strip"></div>
+        <div id="scheduleTimeline" class="timeline"></div>
+        <div class="schedule-actions">
+          <button class="modal-btn ghost" id="addTaskBtn">➕ إضافة مهمة</button>
+          <button class="modal-btn ghost" id="repeatTomorrowBtn">🔁 تكرار الجدول لغدٍ</button>
+          <button class="modal-btn gold" id="aiAdviceBtn">💡 نصيحة ذكية ليومي</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="companion.js?v=19"></script>
+  <script src="app.js?v=19"></script>
+</body>
+</html>
